@@ -20,8 +20,8 @@ from bot import (
     audio_b,
     preset,
     codec
-    #name,
-    #size
+    name,
+    size
     
 
 )
