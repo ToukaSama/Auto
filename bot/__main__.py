@@ -19,7 +19,7 @@ from bot import (
     resolution,
     audio_b,
     preset,
-    codec
+    codec,
     name,
     size
     
