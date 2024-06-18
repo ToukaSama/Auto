@@ -95,18 +95,18 @@ if __name__ == "__main__" :
     async def changecrf(app, message):
         if message.from_user.id in AUTH_USERS:
             cr = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {cr} crf"
+            OUT = f"<blockquote> will be using : {cr} crf</blockquote>"
             crf.insert(0, f"{cr}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("<b>Admin Only</b> 💀")
+            await message.reply_text("<blockquote><b>Admin Only</b> 💀</blockquote>")
             
     @app.on_message(filters.incoming & filters.command(["settings", f"settings@{BOT_USERNAME}"]))
     async def settings(app, message):
         if message.from_user.id in AUTH_USERS:
-            await message.reply_text(f"<b>The current settings will be added to your video file :</b>\n\n<b>Codec</b> : {codec[0]} \n<b>Crf</b> : {crf[0]} \n<b>Resolution</b> : {resolution[0]} \n<b>Preset</b> : {preset[0]} \n<b>Audio Bitrates</b> : {audio_b[0]}")
+            await message.reply_text(f"<blockquote><b>The current settings will be added to your video file :</b>\n\n<b>Codec</b> : {codec[0]} \n<b>Crf</b> : {crf[0]} \n<b>Resolution</b> : {resolution[0]} \n<b>Preset</b> : {preset[0]} \n<b>Audio Bitrates</b> : {audio_b[0]}</blockquote>")
         else:
-            await message.reply_text("<b>Admin Only</b> 💀")
+            await message.reply_text("<blockquote><b>Admin Only</b> 💀<blockquote/>")
 
     @app.on_message(filters.incoming & filters.command(["info", f"info@{BOT_USERNAME}"]))
     async def media_info(app, message):
@@ -120,36 +120,27 @@ if __name__ == "__main__" :
     async def changer(app, message):
         if message.from_user.id in AUTH_USERS:
             r = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {r} resolution"
+            OUT = f"<blockquote>I will be using : {r} resolution</blockquote>"
             resolution.insert(0, f"{r}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("<b>Admin Only</b> 💀")
+            await message.reply_text("<blockquote><b>Admin Only</b> 💀</blockquote>")
 
     @app.on_message(filters.incoming & filters.command(["size", f"size@{BOT_USERNAME}"]))
     async def changesi(app, message):
         if message.from_user.id in AUTH_USERS:
             si = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {si} watermark size"
+            OUT = f"<blockquote>I will be using : {si} watermark size</blockquote>"
             size.insert(0, f"{si}")
             await message.reply_text(OUT)
         else:
             await message.reply_text("Error")
-    @app.on_message(filters.incoming & (filters.video | filters.document))
-    async def help_message(app, message):
-        if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot contact Vegapunk")
-        query = await message.reply_text("Added to Queue ...\nPlease be patient, Compress will start soon", quote=True)
-        data.append(message)
-        if len(data) == 1:
-         await query.delete()   
-         await add_task(message)
 
     @app.on_message(filters.incoming & filters.command(["name", f"name@{BOT_USERNAME}"]))
     async def changete(app, message):
         if message.from_user.id in AUTH_USERS:
             na = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {na} watermark name"
+            OUT = f"<blockquote>I will be using : {na} watermark name</blockquote>"
             name.insert(0, f"{na}")
             await message.reply_text(OUT)
         else:
@@ -159,39 +150,39 @@ if __name__ == "__main__" :
     async def changepr(app, message):
         if message.from_user.id in AUTH_USERS:
             pop = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {pop} preset"
+            OUT = f"<blockquote>I will be using : {pop} preset</blockquote>"
             preset.insert(0, f"{pop}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("<b>Admin Only</b> 💀")
+            await message.reply_text("<blockquote><b>Admin Only</b> 💀</blockquote>")
 
             
     @app.on_message(filters.incoming & filters.command(["codec", f"codec@{BOT_USERNAME}"]))
     async def changecode(app, message):
         if message.from_user.id in AUTH_USERS:
             col = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {col} codec"
+            OUT = f"<blockquote>I will be using : {col} codec</blockquote>"
             codec.insert(0, f"{col}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("<b>Admin Only</b> 💀")
+            await message.reply_text("<blockquote><b>Admin Only</b> 💀</blockquote>")
              
     @app.on_message(filters.incoming & filters.command(["audio", f"audio@{BOT_USERNAME}"]))
     async def changea(app, message):
         if message.from_user.id in AUTH_USERS:
             aud = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {aud} audio"
+            OUT = f"<blockquote>I will be using : {aud} audio</blockquote>"
             audio_b.insert(0, f"{aud}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("<b>Admin Only</b> 💀")
+            await message.reply_text("<blockquote><b>Admin Only</b> 💀</blockquote>")
             
         
     @app.on_message(filters.incoming & filters.command(["compress", f"compress@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot contact ")
-        query = await message.reply_text("ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ...\nᴘʟᴇᴀsᴇ ʙᴇ ᴘᴀᴛɪᴇɴᴛ ʏᴏᴜ ᴇɴᴄᴏᴅᴇ ᴡɪʟʟ sᴛᴀʀᴛ sᴏᴏɴ", quote=True)
+            return await message.reply_text("<blockquote>You are not authorised to use this bot contact @zoro_is_robot</blockquote>")
+        query = await message.reply_text("<blockquote>ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ...\nᴘʟᴇᴀsᴇ ʙᴇ ᴘᴀᴛɪᴇɴᴛ ʏᴏᴜ ᴇɴᴄᴏᴅᴇ ᴡɪʟʟ sᴛᴀʀᴛ sᴏᴏɴ</blockquote>", quote=True)
         data.append(message.reply_to_message)
         if len(data) == 1:
          await query.delete()   
@@ -200,16 +191,26 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & filters.command(["restart", f"restart@{BOT_USERNAME}"]))
     async def restarter(app, message):
         if message.from_user.id in AUTH_USERS:
-            await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ ᴛʜᴇ ʙᴏᴛ")
+            await message.reply_text("<blockquote>ʀᴇsᴛᴀʀᴛɪɴɢ ᴛʜᴇ ʙᴏᴛ</blockquote>")
             quit(1)
         
     @app.on_message(filters.incoming & filters.command(["clear", f"clear@{BOT_USERNAME}"]))
     async def restarter(app, message):
         if message.from_user.id in AUTH_USERS:
             data.clear()
-            await message.reply_text("✅ Successfully cleared Queue ...")
+            await message.reply_text("<blockquote>✅ Successfully cleared Queue ...</blockquote>")
         else:
-            await message.reply_text("<b>Admin Only</b> 💀")
+            await message.reply_text("<blockquote><b>Admin Only</b> 💀</blockquote>")
+
+    @app.on_message(filters.incoming & (filters.video | filters.document))
+    async def help_message(app, message):
+        if message.chat.id not in AUTH_USERS:
+            return await message.reply_text("<blockquote>You are not authorised to use this bot contact Vegapunk</blockquote>")
+        query = await message.reply_text("<blockquote>Added to Queue ⏰...\nPlease be patient, Compress will start soon</blockquote>", quote=True)
+        data.append(message)
+        if len(data) == 1:
+         await query.delete()   
+         await add_task(message)
 
        
     @app.on_message(filters.incoming & filters.command(["cancel", f"cancel@{BOT_USERNAME}"]))
@@ -231,7 +232,7 @@ if __name__ == "__main__" :
    
     @app.on_message(filters.incoming & filters.command(["help", f"help@{BOT_USERNAME}"]))
     async def help_message(app, message):
-        await message.reply_text("Hi, I am <b>Video Encoder bot</b>\n\n➥ Send me your telegram files\n➥ I will encode them one by one as I have <b>queue feature</b>\n➥ Just send me the jpg/pic and it will be set as your custom thumbnail \n➥ For ffmpeg lovers - u can change crf by /eval crf.insert(0, 'crf value')\n➥ Contact ☆  \n\n🏷<b>Maintained By : @zoro_is_robot</b>", quote=True)
+        await message.reply_text("<blockquote>Hi, I am <b>Video Encoder bot</b>\n\n➥ Send me your telegram files\n➥ I will encode them one by one as I have <b>queue feature</b>\n➥ Just send me the jpg/pic and it will be set as your custom thumbnail \n➥ For ffmpeg lovers - u can change crf by /eval crf.insert(0, 'crf value')\n➥ Contact ☆ Vegapunk</blockquote> \n\n<blockquote><b>Maintained By : Vegapunk</b></blockquote>", quote=True)
   
     @app.on_message(filters.incoming & filters.command(["log", f"log@{BOT_USERNAME}"]))
     async def help_message(app, message):
@@ -241,9 +242,10 @@ if __name__ == "__main__" :
       stt = dt.now()
       ed = dt.now()
       v = ts(int((ed - uptime).seconds) * 1000)
+      u = f"<blockquote> Uptime = {v} </blockquote>"
       ms = (ed - stt).microseconds / 1000
-      p = f"Pɪɴɢ = {ms}ms"
-      await message.reply_text(v + "\n" + p)
+      p = f"<blockquote>Pɪɴɢ = {ms}ms </blockquote>"
+      await message.reply_text(u + "\n" + p)
 
     call_back_button_handler = CallbackQueryHandler(
         button
