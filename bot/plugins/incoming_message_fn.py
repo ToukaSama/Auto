@@ -343,11 +343,11 @@ async def incoming_compress_message_f(update):
       )
       u_start = time.time()
       caption = Localisation.COMPRESS_SUCCESS.replace('{}', downloaded_time, 1).replace('{}', compressed_time, 1)
-      upload = await bot.send_document(
+      upload = await bot.send_video(
         chat_id=update.chat.id,
-        document=o,
+        video=o,
         caption=caption,
-        force_document=False,
+        #force_document=False,
         #duration=duration,
         thumb="thumb.jpg",
         reply_to_message_id=update.id,
