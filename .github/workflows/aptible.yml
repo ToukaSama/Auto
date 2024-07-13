@@ -1,8 +1,6 @@
 name: aptible
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch: {}
 
 jobs:
@@ -17,6 +15,6 @@ jobs:
       with:
         type: git
         app: 480p
-        environment: encoder3
+        environment: 720phh
         username: ${{ secrets.APTIBLE_USERNAME }}
         password: ${{ secrets.APTIBLE_PASSWORD }}
