@@ -15,6 +15,6 @@ jobs:
       with:
         type: git
         app: 480p
-        environment: 720phh
+        environment: encoder14
         username: ${{ secrets.APTIBLE_USERNAME }}
         password: ${{ secrets.APTIBLE_PASSWORD }}
