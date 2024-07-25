@@ -90,7 +90,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     audio_b.append("48k")
     #name.append("Free Edu Care")
     #size.append("20")
-    file_genertor_command = f"vegapunk -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}'  -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]}   '{out_put_file_name}' -y"
+    file_genertor_command = f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}'  -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]}   '{out_put_file_name}' -y"
 #Done !!
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
