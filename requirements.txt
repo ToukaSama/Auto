@@ -5,11 +5,11 @@ Pillow
 psutil
 hachoir
 tgcrypto
-#pyrogram==1.181.0
+pyrofork
 motor
 #https://github.com/pyrogram/pyrogram/archive/master.zip
 dnspython
 #git+https://github.com/KurimuzonAkuma/pyrogram.git
 #git+https://github.com/Mayuri-Chan/pyrofork.git
-git+https://github.com/5hojib/Pyrogram.git
-pyromod
+#git+https://github.com/5hojib/Pyrogram.git
+#pyromod
