@@ -202,15 +202,15 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("<blockquote><b>Admin Only</b> 💀</blockquote>")
 
-    @app.on_message(filters.incoming & (filters.video | filters.document))
-    async def help_message(app, message):
-        if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("<blockquote>You are not authorised to use this bot contact Vegapunk</blockquote>")
-        query = await message.reply_text("<blockquote>Added to Queue ⏰...\nPlease be patient, Compress will start soon</blockquote>", quote=True)
-        data.append(message)
-        if len(data) == 1:
-         await query.delete()   
-         await add_task(message)
+    # @app.on_message(filters.incoming & (filters.video | filters.document))
+    # async def help_message(app, message):
+    #     if message.chat.id not in AUTH_USERS:
+    #         return await message.reply_text("<blockquote>You are not authorised to use this bot contact Vegapunk</blockquote>")
+    #     query = await message.reply_text("<blockquote>Added to Queue ⏰...\nPlease be patient, Compress will start soon</blockquote>", quote=True)
+    #     data.append(message)
+    #     if len(data) == 1:
+    #      await query.delete()   
+    #      await add_task(message)
 
        
     @app.on_message(filters.incoming & filters.command(["cancel", f"cancel@{BOT_USERNAME}"]))
