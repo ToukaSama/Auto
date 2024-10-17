@@ -5,7 +5,7 @@ Pillow
 psutil
 hachoir
 tgcrypto
-pyrofork
+#pyrofork
 motor
 #https://github.com/pyrogram/pyrogram/archive/master.zip
 dnspython
@@ -13,3 +13,4 @@ dnspython
 #git+https://github.com/Mayuri-Chan/pyrofork.git
 #git+https://github.com/5hojib/Pyrogram.git
 #pyromod
+electrogram
