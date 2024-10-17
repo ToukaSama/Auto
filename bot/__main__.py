@@ -184,7 +184,7 @@ if __name__ == "__main__" :
             return await message.reply_text("<blockquote>You are not authorised to use this bot.</blockquote>")
         query = await message.reply_text("<blockquote>ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ...\nᴘʟᴇᴀsᴇ ʙᴇ ᴘᴀᴛɪᴇɴᴛ ʏᴏᴜ ᴇɴᴄᴏᴅᴇ ᴡɪʟʟ sᴛᴀʀᴛ sᴏᴏɴ</blockquote>", quote=True)
         data.append(message.reply_to_message)
-        if len(data) == 1:
+        if len(data) == 3:
          await query.delete()   
          await add_task(message.reply_to_message)     
  
