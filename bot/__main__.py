@@ -182,11 +182,11 @@ if __name__ == "__main__" :
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
             return await message.reply_text("<blockquote>You are not authorised to use this bot.</blockquote>")
-#        query = await message.reply_text("<blockquote>ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ...\nᴘʟᴇᴀsᴇ ʙᴇ ᴘᴀᴛɪᴇɴᴛ ʏᴏᴜ ᴇɴᴄᴏᴅᴇ ᴡɪʟʟ sᴛᴀʀᴛ sᴏᴏɴ</blockquote>", quote=True)
-        #data.append(message.reply_to_message)
-     #   if len(data) == 1:
-     #    await query.delete()   
-     #    await #add_task(message.reply_to_message)     
+        query = await message.reply_text("<blockquote>ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ...\nᴘʟᴇᴀsᴇ ʙᴇ ᴘᴀᴛɪᴇɴᴛ ʏᴏᴜ ᴇɴᴄᴏᴅᴇ ᴡɪʟʟ sᴛᴀʀᴛ sᴏᴏɴ</blockquote>", quote=True)
+        data.append(message.reply_to_message)
+        if len(data) == 1:
+         await query.delete()   
+         await add_task(message.reply_to_message)     
  
     @app.on_message(filters.incoming & filters.command(["restart", f"restart@{BOT_USERNAME}"]))
     async def restarter(app, message):
