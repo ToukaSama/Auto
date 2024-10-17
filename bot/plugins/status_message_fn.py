@@ -39,9 +39,9 @@ async def exec_message_f(client, message):
         PROCESS_RUN_TIME = 100
         cmd = message.text.split(" ", maxsplit=1)[1]
 
-        reply_to_id = message.message_id
+        reply_to_id = message.id
         if message.reply_to_message:
-            reply_to_id = message.reply_to_message.message_id
+            reply_to_id = message.reply_to_message.id
 
         start_time = time.time() + PROCESS_RUN_TIME
         process = await asyncio.create_subprocess_shell(
@@ -82,9 +82,9 @@ async def eval_message_f(client, message):
         status_message = await message.reply_text("Processing ...")
         cmd = message.text.split(" ", maxsplit=1)[1]
 
-        reply_to_id = message.message_id
+        reply_to_id = message.id
         if message.reply_to_message:
-            reply_to_id = message.reply_to_message.message_id
+            reply_to_id = message.reply_to_message.id
 
         old_stderr = sys.stderr
         old_stdout = sys.stdout
