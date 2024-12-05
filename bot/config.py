@@ -1,7 +1,7 @@
 from bot.get_cfg import get_config
 class Config(object):
     # You can keep this default
-    SESSION_NAME = get_config("SESSION_NAME", "AHCompressorBot")
+    SESSION_NAME = get_config("SESSION_NAME", "Encode")
     # AHCompressBot....
     # sucks Dude
     APP_ID = int(get_config("APP_ID", "22606849"))
@@ -11,9 +11,9 @@ class Config(object):
      # Get these values from my.telegram.org
     AUTH_USERS = set(
         int(x) for x in get_config(
-            "AUTH_USERS", "6440021089").split()
+            "AUTH_USERS", "-6440021089").split()
     )
-# array , simplest method was AUTH_USERS = [] ; AUTH_USERS.append(your telegram id) 🤣
+# array , simplest method was AUTH_USERS = [] ; AUTH_USERS.append(6440021089) 🤣
     # array to store the channel ID who are authorized to use the bot
     # dont u fucking remove this id 😤
     TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "7789056658:AAFjsVwXDpIwt_xnELHUG22IQLmmoeXnX3Y")
