@@ -11,9 +11,9 @@ class Config(object):
      # Get these values from my.telegram.org
     AUTH_USERS = set(
         int(x) for x in get_config(
-            "AUTH_USERS", "-6440021089").split()
+            "AUTH_USERS", "6440021089").split()
     )
-# array , simplest method was AUTH_USERS = [] ; AUTH_USERS.append(6440021089) 🤣
+# array , simplest method was AUTH_USERS = [6440021089] ; AUTH_USERS.append(6440021089) 🤣
     # array to store the channel ID who are authorized to use the bot
     # dont u fucking remove this id 😤
     TG_BOT_TOKEN = get_config("TG_BOT_TOKEN", "7789056658:AAFjsVwXDpIwt_xnELHUG22IQLmmoeXnX3Y")
