@@ -20,7 +20,7 @@ class Config(object):
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = get_config("DOWNLOAD_LOCATION", "/app/downloads")
     # Telegram maximum file upload size
-    BOT_USERNAME = get_config("BOT_USERNAME", "Sherry_Lulu_bot")
+    BOT_USERNAME = get_config("BOT_USERNAME", "Encoder_Test_bot")
     MAX_FILE_SIZE = 2097152000
     TG_MAX_FILE_SIZE = 2097152000
     FREE_USER_MAX_FILE_SIZE = 2097152000
