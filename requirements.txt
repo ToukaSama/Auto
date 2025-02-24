@@ -13,4 +13,4 @@ dnspython
 #git+https://github.com/Mayuri-Chan/pyrofork.git
 #git+https://github.com/5hojib/Pyrogram.git
 #pyromod
-pyrogram 
+pyrofork
