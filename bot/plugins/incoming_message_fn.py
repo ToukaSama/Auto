@@ -87,7 +87,7 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Aɴɪᴍᴇ Cʜᴀɴɴᴇʟ', url='https://t.meAnimez_Hindi_dub')
+                    InlineKeyboardButton('Aɴɪᴍᴇ Cʜᴀɴɴᴇʟ', url='https://t.me/Animez_Hindi_Dub')
                 ]
             ]
         ),
