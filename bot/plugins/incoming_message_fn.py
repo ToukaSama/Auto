@@ -87,7 +87,7 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Owner', url='tg://settings/Hacked')
+                    InlineKeyboardButton('Aɴɪᴍᴇ Cʜᴀɴɴᴇʟ', url='https://t.me.Animez_Hindi_Dub')
                 ]
             ]
         ),
@@ -442,8 +442,8 @@ async def incoming_cancel_message_f(bot, update):
   if os.path.exists(status):
     inline_keyboard = []
     ikeyboard = []
-    ikeyboard.append(InlineKeyboardButton("Yes 🚫", callback_data=("fuckingdo").encode("UTF-8")))
-    ikeyboard.append(InlineKeyboardButton("No 🤗", callback_data=("fuckoff").encode("UTF-8")))
+    ikeyboard.append(InlineKeyboardButton("Yup🍹", callback_data=("Meow").encode("UTF-8")))
+    ikeyboard.append(InlineKeyboardButton("Nope 🕊️", callback_data=("Otie").encode("UTF-8")))
     inline_keyboard.append(ikeyboard)
     reply_markup = InlineKeyboardMarkup(inline_keyboard)
     await update.reply_text("Are you sure? 🚫 This will stop the compression!", reply_markup=reply_markup, quote=True)
